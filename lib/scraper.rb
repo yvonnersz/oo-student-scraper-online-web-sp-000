@@ -43,13 +43,13 @@ class Scraper
     social_media_array = doc.css("div.social-icon-container a").collect {|x| x.attribute("href").value}
     social_media_array.each do |social_media|
       if social_media.include?("twitter")
-        student[:twitter] = social_media_array
+        student[:twitter] = social_media
       elsif social_media.include?("linkedin")
-        student[:linkedin] = social_media_array
+        student[:linkedin] = social_media
       elsif social_media.include?("github")
-        student[:github] = social_media_array
+        student[:github] = social_media
       else
-        student[:blog] = social_media_array
+        student[:blog] = social_media
       end
     end
 
