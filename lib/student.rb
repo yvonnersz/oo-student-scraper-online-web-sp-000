@@ -5,8 +5,8 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-
-    self.new(student_hash[:name])
+    student = self.new
+    student.name = (student_hash[:name])
   end
 
   def self.create_from_collection(students_array)
