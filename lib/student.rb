@@ -18,6 +18,7 @@ class Student
           self.send("#{key}=",value)
         end
       end
+    end
       @@all << self
     binding.pry
   end
