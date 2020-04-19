@@ -6,6 +6,9 @@ class Student
 
   def initialize(student_hash)
     binding.pry
+    student_hash.collect do |name,location|
+      name
+    end
   end
 
   def self.create_from_collection(students_array)
