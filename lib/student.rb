@@ -5,10 +5,6 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    binding.pry
-    student_hash.collect do |name,location|
-      name
-    end
     student_hash[:name]
   end
 
