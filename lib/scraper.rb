@@ -40,25 +40,22 @@ class Scraper
     # :profile_quote=> doc.css("div.profile-quote").text
     # :bio=> doc.css("div.description-holder p").text
 
-    social_media_array = doc.css("div.social-icon-container a").collect {|x| x.attribute("href").value}
-    social_media_array.each do |social_media|
-      binding.pry
-      if social_media.include?("twitter")
-        student[:twitter] = social_media_array[0]
-      elsif social_media.include?("linkedin")
-        student[:linkedin] = social_media_array[1]
-      elsif social_media.include?("github")
-        student[:github] = social_media_array[2]
-      else
-        student[:blog] = social_media_array[3]
+
+      social_medias = doc.css("div.social-icon-container a").collect {|x| x.attribute("href").value}
+        social_medias.each do |social_media|
+          if social_media.include?("linkedin")
+            student[:linkedin] = social_media
+          elsif social_media.include?("github")
+           student[:github] = social_media
+          elsif social_media.include?("twitter")
+            student[:twitter] = social_media
+          else
+            student[:blog] = social_media
+          end
       end
-    end
-
-    student[:profile_quote] = doc.css(".profile-quote").text
-    student[:bio] = doc.css("div.description-holder p").text
-
-    student
-
+         student[:bio] = doc.css("div.bio-content.content-holder div.description-holder p").text
+         student[:profile_quote] = doc.css(".profile-quote").text
+         student
   end
 
 end
