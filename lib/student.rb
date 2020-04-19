@@ -5,7 +5,7 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-  
+
     name = self.new(student_hash[:name])
   end
 
