@@ -5,8 +5,8 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    student_hash.collect do |key, value|
-      value
+    student_hash.collect do |name, location|
+      name
     end
   end
 
