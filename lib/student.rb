@@ -12,12 +12,13 @@ class Student
   end
 
   def self.create_from_collection(students_array)
-    # students_array.each do |student|
-    #   student.each do |key,value|
-    #     self.send("#{key}=",value)
-    #   end
-    # end
-    # @@all << self
+    students_array.each do |array|
+      students_array.each do |student|
+        student.each do |key,value|
+          self.send("#{key}=",value)
+        end
+      end
+      @@all << self
     binding.pry
   end
 
