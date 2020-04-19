@@ -19,7 +19,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |key,value|
-      if key == "bio" return value
+      if key == "bio"
         student[:bio] = value
       end
     end
