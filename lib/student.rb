@@ -9,10 +9,14 @@ class Student
       self.send("#{key}=",value)
     end
     @@all << self
+    binding.pry
   end
 
   def self.create_from_collection(students_array)
     binding.pry
+    students_array.colect do |student|
+      student[:name]
+    end
   end
 
   def add_student_attributes(attributes_hash)
