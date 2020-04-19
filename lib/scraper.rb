@@ -42,7 +42,6 @@ class Scraper
 
     social_media_array = doc.css("div.social-icon-container a").collect {|x| x.attribute("href").value}
     social_media_array.each do |social_media|
-      binding.pry
       if social_media.include?("twitter")
         student[:twitter] = social_media_array[0]
       elsif social_media.include?("linkedin")
