@@ -5,9 +5,10 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    student_hash.collect do |name, location|
-      name
+    student_hash.each do |name, location|
+      self.send("#{key}=",value)
     end
+    @@all << 
   end
 
   def self.create_from_collection(students_array)
