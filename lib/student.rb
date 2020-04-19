@@ -18,9 +18,8 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-    binding.pry
     attributes_hash.each do |key,value|
-      if key == "bio", return value
+      if key == "bio" return value
         student[:bio] = value
       end
     end
